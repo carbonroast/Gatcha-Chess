@@ -7,7 +7,10 @@ public class Tile : NetworkBehaviour {
 	public Vector2 Coord;
 	// Use this for initialization
 	void Start () {
-		CmdChangeName ();
+		if (!isServer) {
+			return;
+		}
+		StartCoroutine (Setup(transform.name));
 	}
 	
 	// Update is called once per frame
@@ -16,13 +19,23 @@ public class Tile : NetworkBehaviour {
 	}
 
 	[Command]
-	void CmdChangeName(){
-		this.transform.name = this.transform.name;
-		RpcChangeName ();
+	void CmdChangeName(string name){
+		this.transform.name = name;
+		RpcChangeName (name);
 	}
 
 	[ClientRpc]
-	void RpcChangeName(){
-		this.transform.name = this.transform.name;
+	void RpcChangeName(string name){
+		this.transform.name = name;
 	}
+
+	/*********************************************************** IEnumerator ************************************************/
+	private IEnumerator Setup(string name)
+	{
+		//wait to be sure that all are ready to start
+		yield return new WaitForSeconds(2.0f);
+		CmdChangeName (name);
+	}
+
 }
+

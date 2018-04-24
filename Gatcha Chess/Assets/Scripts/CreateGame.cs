@@ -10,15 +10,15 @@ public class CreateGame : NetworkBehaviour {
 		if (!isServer) {
 			return;
 		}
-		CreateBoard ();
+		CmdCreateBoard ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
-
-	void CreateBoard(){
+	[Command]
+	void CmdCreateBoard(){
 		GameObject board = new GameObject ();
 		board.AddComponent<NetworkIdentity> ();
 		board.transform.name = "Board";

@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Game Scene.unity
+- path: C:/Users/Nathan/Desktop/gemtd/Assets/td.unity
   isLoaded: 1
   isActive: 1
