@@ -37,6 +37,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4116931847810238}
+  - component: {fileID: 114214512740356804}
   m_Layer: 0
   m_Name: PlayerUnit
   m_TagString: Untagged
@@ -110,6 +111,38 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1268740932728070}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114214512740356804
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1464611954590520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 72
+    i1: 218
+    i2: 124
+    i3: 8
+    i4: 216
+    i5: 103
+    i6: 179
+    i7: 180
+    i8: 57
+    i9: 89
+    i10: 128
+    i11: 116
+    i12: 19
+    i13: 175
+    i14: 167
+    i15: 64
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!135 &135404302137368620
 SphereCollider:
   m_ObjectHideFlags: 1
