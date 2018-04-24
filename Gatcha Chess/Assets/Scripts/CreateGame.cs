@@ -21,7 +21,7 @@ public class CreateGame : NetworkBehaviour {
 		for (int x = 0; x < 8; x++) {
 			for (int y = 0; y < 8; y++) {
 				GameObject tileBlock = (GameObject)Instantiate (Tile);
-				tileBlock.transform.position = new Vector2 (x, y);
+				tileBlock.transform.position = new Vector3 (x,0, y);
 				tileBlock.transform.parent = board.transform;
 			}
 		}
