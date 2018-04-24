@@ -51,7 +51,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\PlayerObject\PlayerObject.cs" />
      <Compile Include="Assets\Scripts\Bishop.cs" />
      <Compile Include="Assets\Scripts\ChessPiece.cs" />
      <Compile Include="Assets\Scripts\ChessPieceManager.cs" />
@@ -59,8 +58,11 @@
      <Compile Include="Assets\Scripts\King.cs" />
      <Compile Include="Assets\Scripts\Knight.cs" />
      <Compile Include="Assets\Scripts\Pawn.cs" />
+     <Compile Include="Assets\Scripts\PlayerObject.cs" />
      <Compile Include="Assets\Scripts\Queen.cs" />
      <Compile Include="Assets\Scripts\Rook.cs" />
+     <Compile Include="Assets\Scripts\Tile.cs" />
+     <Compile Include="Assets\Scripts\TileManager.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
