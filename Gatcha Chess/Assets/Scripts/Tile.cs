@@ -5,11 +5,13 @@ using UnityEngine.Networking;
 
 public class Tile : NetworkBehaviour {
 	public Vector2 Coord;
+	public bool occupied;
 	// Use this for initialization
 	void Start () {
 		if (!isServer) {
 			return;
 		}
+		occupied = false;
 		StartCoroutine (Setup(transform.name));
 	}
 	

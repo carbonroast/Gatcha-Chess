@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Networking;
 
 public class ChessPiece : NetworkBehaviour {
-
+	public Vector2 currentTile;
 	// Use this for initialization
 	public virtual void Start () {
 		ChessPieceManager.RegisterPiece (this.transform.name, this.gameObject);
