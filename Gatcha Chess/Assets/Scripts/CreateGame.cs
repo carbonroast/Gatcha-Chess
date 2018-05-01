@@ -45,7 +45,7 @@ public class CreateGame : NetworkBehaviour {
 	}
 
 	void AddPieces(){
-		//SpawnQueen ();
+		SpawnQueen ();
 		SpawnBishop ();
 	}
 
