@@ -20,43 +20,52 @@ public class Queen : ChessPiece {
 
 	public override void Movement (){
 		List<Vector2> canMove = new List<Vector2>();
+		bool hitPiece = false;
 		//Horizontals
 		for (int x=0; x< movement.x; x++){
-			if (x != currentTile.x) {
+			if (x != currentTile.x && hitPiece == false) {
 				Vector2 tileLocation = new Vector2 (x, currentTile.y);
 				bool tileExist = TileManager.TileExistAt (tileLocation);
+				hitPiece = TileManager.GetTileAt (tileLocation).GetComponent<Tile> ().occupied;
+				if (hitPiece) {
+					Debug.Log ("Piece in way");
+				}
 				if (tileExist) {
 					canMove.Add (tileLocation);
-					Debug.Log ("ADDED : " + tileLocation);
+					//Debug.Log ("ADDED : " + tileLocation);
 				}
 			}
 
 		}
+		hitPiece = false;
 		for (int y=0; y< movement.x; y++){
-			if (y != currentTile.y) {
+			if (y != currentTile.y && hitPiece == false) {
 				Vector2 tileLocation = new Vector2 (currentTile.x, y);
 				bool tileExist = TileManager.TileExistAt (tileLocation);
+				hitPiece = TileManager.GetTileAt (tileLocation).GetComponent<Tile> ().occupied;
 				if (tileExist) {
 					canMove.Add (tileLocation);
-					Debug.Log ("ADDED : " + tileLocation);
+					//Debug.Log ("ADDED : " + tileLocation);
 				}
 			}
 		}
 
 		//Verticals
 		Vector2 spotCheck = new Vector2 (currentTile.x, currentTile.y);
+		hitPiece = false;
 		//TopRight
-		for (int x=(int)currentTile.x+1; x< CreateGame.BoardSize.x + (movement.x - currentTile.x); x++){
-			Debug.Log ("X is " + x);
-			for (int y = (int)currentTile.y + 1; y < CreateGame.BoardSize.y + (movement.y - currentTile.y); y++) {
-				Debug.Log ("Y is " + y);
-				if (new Vector2(x,y) == spotCheck  + new Vector2(1,1)) {
+		for (int x=(int)currentTile.x+1; x< CreateGame.BoardSize.x; x++){
+			//Debug.Log ("X is " + x);
+			for (int y = (int)currentTile.y + 1; y < CreateGame.BoardSize.y; y++) {
+				//Debug.Log ("Y is " + y);
+				if (new Vector2(x,y) == spotCheck  + new Vector2(1,1) && hitPiece == false) {
 
 					Vector2 tileLocation = new Vector2 (x, y);
 					bool tileExist = TileManager.TileExistAt (tileLocation);
+					hitPiece = TileManager.GetTileAt (tileLocation).GetComponent<Tile> ().occupied;
 					if (tileExist) {
 						canMove.Add (tileLocation);
-						Debug.Log ("ADDED : " + tileLocation);
+						//Debug.Log ("ADDED : " + tileLocation);
 						spotCheck = spotCheck + new Vector2(1,1);
 					}
 				}
@@ -64,15 +73,17 @@ public class Queen : ChessPiece {
 		}
 
 		//BottomLeft
-		spotCheck = new Vector2 (currentTile.x, currentTile.y);			
+		spotCheck = new Vector2 (currentTile.x, currentTile.y);
+		hitPiece = false;
 		for (int x=(int)currentTile.x - 1; x>=0; x--){
 			for (int y = (int)currentTile.y - 1; y >= 0; y--) {
-				if (new Vector2(x,y) == spotCheck  + new Vector2(-1,-1)) {
+				if (new Vector2(x,y) == spotCheck  + new Vector2(-1,-1) && hitPiece == false) {
 					Vector2 tileLocation = new Vector2 (x, y);
 					bool tileExist = TileManager.TileExistAt (tileLocation);
+					hitPiece = TileManager.GetTileAt (tileLocation).GetComponent<Tile> ().occupied;
 					if (tileExist) {
 						canMove.Add (tileLocation);
-						Debug.Log ("ADDED : " + tileLocation);
+						//Debug.Log ("ADDED : " + tileLocation);
 						spotCheck = spotCheck + new Vector2(-1,-1);
 					}
 				}
@@ -80,15 +91,17 @@ public class Queen : ChessPiece {
 		}
 
 		//TopLeft
-		spotCheck = new Vector2 (currentTile.x, currentTile.y);		
+		spotCheck = new Vector2 (currentTile.x, currentTile.y);
+		hitPiece = false;
 		for (int x=(int)currentTile.x - 1; x>=0; x--){
-			for (int y = (int)currentTile.y + 1; y < CreateGame.BoardSize.y + (movement.y - currentTile.y); y++) {
-				if (new Vector2(x,y) == spotCheck  + new Vector2(-1,1)) {
+			for (int y = (int)currentTile.y + 1; y < CreateGame.BoardSize.y; y++) {
+				if (new Vector2(x,y) == spotCheck  + new Vector2(-1,1) && hitPiece == false) {
 					Vector2 tileLocation = new Vector2 (x, y);
 					bool tileExist = TileManager.TileExistAt (tileLocation);
+					hitPiece = TileManager.GetTileAt (tileLocation).GetComponent<Tile> ().occupied;
 					if (tileExist) {
 						canMove.Add (tileLocation);
-						Debug.Log ("ADDED : " + tileLocation);
+						//Debug.Log ("ADDED : " + tileLocation);
 						spotCheck = spotCheck + new Vector2(-1,1);
 					}
 				}
@@ -96,15 +109,17 @@ public class Queen : ChessPiece {
 		}
 
 		//BottomRight
-		spotCheck = new Vector2 (currentTile.x, currentTile.y);			
-		for (int x=(int)currentTile.x+1; x< CreateGame.BoardSize.x + (movement.x - currentTile.x); x++){
+		spotCheck = new Vector2 (currentTile.x, currentTile.y);	
+		hitPiece = false;
+		for (int x=(int)currentTile.x+1; x< CreateGame.BoardSize.x ; x++){
 			for (int y = (int)currentTile.y - 1; y >= 0; y--) {
-				if (new Vector2(x,y) == spotCheck  + new Vector2(1,-1)) {
+				if (new Vector2(x,y) == spotCheck  + new Vector2(1,-1) && hitPiece == false) {
 					Vector2 tileLocation = new Vector2 (x, y);
 					bool tileExist = TileManager.TileExistAt (tileLocation);
+					hitPiece = TileManager.GetTileAt (tileLocation).GetComponent<Tile> ().occupied;
 					if (tileExist) {
 						canMove.Add (tileLocation);
-						Debug.Log ("ADDED : " + tileLocation);
+						//Debug.Log ("ADDED : " + tileLocation);
 						spotCheck = spotCheck + new Vector2(1,-1);
 					}
 				}

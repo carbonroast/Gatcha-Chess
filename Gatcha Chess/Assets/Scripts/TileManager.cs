@@ -15,20 +15,20 @@ public class TileManager : MonoBehaviour {
 	}
 	public static bool TileExistAt(Vector2 coord){
 		if (board.ContainsKey (coord)) {
-			Debug.Log("Found Tile at : " +coord);
+			//Debug.Log("Found Tile at : " +coord);
 			return true;
 		} else {
-			Debug.Log("Did Not Find Tile at : " +coord);
+			//Debug.Log("Did Not Find Tile at : " +coord);
 			return false;
 		}
 	}
 	public static GameObject GetTileAt(Vector2 coord){
-		if (coord.x <= CreateGame.BoardSize.x && coord.y <= CreateGame.BoardSize.y) {
+		if (board.ContainsKey (coord)) {
 			string id = board [coord];
-			Debug.Log("Return Tile at : " +coord);
+			//Debug.Log("Return Tile at : " +coord);
 			return tiles [id];
 		} else {
-			Debug.Log("Tile DOes Not Exist");
+			//Debug.Log("Tile DOes Not Exist");
 			return null;
 		}
 	}

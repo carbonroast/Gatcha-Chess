@@ -110,8 +110,8 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 463516d5b5fe8e67a0a24c48f2095b04 UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingRenderer
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Bishop
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.King
+61f25b82423bbbe574d15d56fd544f2b Assembly-CSharp.dll:.Bishop
+61f25b82423bbbe574d15d56fd544f2b Assembly-CSharp.dll:.King
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.TileManager
 0c9f0c111974d91e98a4434afc9ef2e9 Assembly-CSharp.dll:.PlayerObject
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
@@ -132,12 +132,12 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.PlayModeRunnerCallback
 5f2ad81aa8994e8fbe25d1e57afe6773 UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.PlaymodeTestsController
 64eb32cc721b1cc68a91ed57461e188c UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.RemoteTestResultSender
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.ChessPiece
+61f25b82423bbbe574d15d56fd544f2b Assembly-CSharp.dll:.ChessPiece
 bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInput
 463516d5b5fe8e67a0a24c48f2095b04 UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingRenderer
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Queen
-33bd1f1baada1648a473516d04d97d93 Assembly-CSharp.dll:.CreateGame
-eb1ba291ac610729887e4a6fecdc51f1 Assembly-CSharp.dll:.Tile
+61f25b82423bbbe574d15d56fd544f2b Assembly-CSharp.dll:.Queen
+3db61b4b55ef154e6a05bbc49615904a Assembly-CSharp.dll:.CreateGame
+4e6669a72660ee1867b00bf66d848f08 Assembly-CSharp.dll:.Tile
