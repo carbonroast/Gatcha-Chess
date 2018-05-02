@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Networking;
 
 public class Tile : NetworkBehaviour {
+	[SyncVar]
 	public Vector2 Coord;
 	[SyncVar]
 	public bool occupied;
@@ -12,7 +13,7 @@ public class Tile : NetworkBehaviour {
 		if (!isServer) {
 			return;
 		}
-		//occupied = false;
+		//	occupied = false;
 		StartCoroutine (Setup(transform.name));
 	}
 	

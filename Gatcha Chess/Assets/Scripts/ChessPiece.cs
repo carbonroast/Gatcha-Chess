@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Networking;
 
 public class ChessPiece : NetworkBehaviour {
+	[SyncVar]
 	public Vector2 currentTile;
 	// Use this for initialization
 	public virtual void Start () {
@@ -21,6 +22,10 @@ public class ChessPiece : NetworkBehaviour {
 	}
 
 	public virtual void SpecialMovement(){
+
+	}
+
+	public virtual void Color(){
 
 	}
 }
