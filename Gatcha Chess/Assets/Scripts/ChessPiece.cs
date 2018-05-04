@@ -25,8 +25,12 @@ public class ChessPiece : NetworkBehaviour {
 	public virtual void SpecialMovement(){
 
 	}
+<<<<<<< HEAD
 
 	public virtual void SetColor(){
 
 	}
+=======
+    
+>>>>>>> ab8e4cb5a9dc02066f9c9f8d492f4d7bef0fab81
 }
