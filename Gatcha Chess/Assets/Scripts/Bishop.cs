@@ -87,10 +87,10 @@ public class Bishop : ChessPiece {
 			}
 		}
 
-		foreach (Vector2 coord in canMove) {
-			GameObject tile = TileManager.GetTileAt (coord);
-			Renderer rend = tile.GetComponent<Renderer> ();
-			rend.material.SetColor ("_Color", Color.green);
-		}
+//		foreach (Vector2 coord in canMove) {
+//			GameObject tile = TileManager.GetTileAt (coord);
+//			Renderer rend = tile.GetComponent<Renderer> ();
+//			rend.material.SetColor ("_Color", Color.green);
+//		}
 	}
 }

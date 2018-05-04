@@ -76,7 +76,7 @@ public class CreateGame : NetworkBehaviour {
 		if (!openSpot) {
 			GameObject _piece = (GameObject)Instantiate (piece);
 			_piece.GetComponent<ChessPiece> ().currentTile = coord;
-			_piece.transform.position = TileManager.GetTileAt (coord).transform.position + new Vector3 (0, 1, 0);
+			_piece.transform.position = TileManager.GetTileAt (coord).transform.position + new Vector3 (0, .5f, 0);
 			NetworkServer.Spawn (_piece);
 			GameObject tile = TileManager.GetTileAt (coord);
 			tile.GetComponent<Tile> ().occupied = true;

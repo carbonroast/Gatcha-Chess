@@ -6,6 +6,7 @@ using UnityEngine.Networking;
 public class ChessPiece : NetworkBehaviour {
 	[SyncVar]
 	public Vector2 currentTile;
+	public string Color;
 	// Use this for initialization
 	public virtual void Start () {
 		ChessPieceManager.RegisterPiece (this.transform.name, this.gameObject);
@@ -25,7 +26,7 @@ public class ChessPiece : NetworkBehaviour {
 
 	}
 
-	public virtual void Color(){
+	public virtual void SetColor(){
 
 	}
 }

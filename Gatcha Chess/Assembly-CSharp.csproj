@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\King.cs" />
      <Compile Include="Assets\Scripts\Knight.cs" />
      <Compile Include="Assets\Scripts\Pawn.cs" />
+     <Compile Include="Assets\Scripts\PlayerConnectionSetup.cs" />
      <Compile Include="Assets\Scripts\PlayerObject.cs" />
      <Compile Include="Assets\Scripts\Queen.cs" />
      <Compile Include="Assets\Scripts\Rook.cs" />
