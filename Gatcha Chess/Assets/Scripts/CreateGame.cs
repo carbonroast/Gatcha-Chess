@@ -10,7 +10,7 @@ public class CreateGame : NetworkBehaviour {
 	public static Vector2 BoardSize = new Vector2(8,8);
 
 	[SerializeField]
-	private GameObject Queen, Bishop;
+	private GameObject Queen, Bishop, King, Rook, Pawn;
 
 
 	// Use this for initialization
@@ -19,7 +19,7 @@ public class CreateGame : NetworkBehaviour {
 			return;
 		}
 		CreateBoard ();
-		FillBoard ();
+		cmdFillBoard ();
 	}
 	
 	// Update is called once per frame
@@ -57,21 +57,25 @@ public class CreateGame : NetworkBehaviour {
 
 	}
 
-	void FillBoard(){
-		//Pawns
+    void cmdFillBoard()
+    {
+        //Pawns
 
-		//Bishop
+        //Bishop
 
-		//Rook
+        //Rook
 
-		//Knight
+        //Knight
 
-		//Queen
-		AddPiece(Queen, new Vector2(3,0));
-		//King
-	}
 
-	void AddPiece(GameObject piece, Vector2 coord){
+        //Queen
+        //AddPiece(Rook, new Vector2(3, 0));
+        //King
+        //AddPiece(King, new Vector2(4, 1));        
+    }
+
+
+    void AddPiece(GameObject piece, Vector2 coord){
 		bool openSpot = TileManager.GetTileAt (coord).GetComponent<Tile> ().occupied;
 		if (!openSpot) {
 			GameObject _piece = (GameObject)Instantiate (piece);
@@ -82,5 +86,5 @@ public class CreateGame : NetworkBehaviour {
 			tile.GetComponent<Tile> ().occupied = true;
 		} 
 	}
-
+    
 }

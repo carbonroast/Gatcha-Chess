@@ -52,8 +52,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf8e5367b86f50c4789fcf390463fa93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerUnitPrefab: {fileID: 1464611954590520, guid: 48da7c08d867b3b43959807413afa740,
-    type: 2}
+  Queen: {fileID: 1754263551016844, guid: 92a3f732c1210d24b9851b6942cbb6f4, type: 2}
+  Bishop: {fileID: 1316193118903822, guid: b04d3a51e21c6364d8ef91fb5d15a99a, type: 2}
+  King: {fileID: 1642692267769202, guid: c60c40ab112730b43825e5a77444849e, type: 2}
+  Rook: {fileID: 1966022163577580, guid: 9216f09799d39984083527d61da983bc, type: 2}
 --- !u!114 &114851467091826948
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -85,4 +87,4 @@ MonoBehaviour:
     i14: 8
     i15: 57
   m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
+  m_LocalPlayerAuthority: 1
