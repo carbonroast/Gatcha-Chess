@@ -50,12 +50,12 @@ public class King : ChessPiece
                 }
 
             }
-            foreach (Vector2 coord in canMove)
-            {
-                GameObject tile = TileManager.GetTileAt(coord);
-                Renderer rend = tile.GetComponent<Renderer>();
-                rend.material.SetColor("_Color", Color.cyan);
-            }
+//            foreach (Vector2 coord in canMove)
+//            {
+//                GameObject tile = TileManager.GetTileAt(coord);
+//                Renderer rend = tile.GetComponent<Renderer>();
+//                rend.material.SetColor("_Color", Color.cyan);
+//            }
         }
     }
 }
