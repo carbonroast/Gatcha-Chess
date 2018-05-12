@@ -52,8 +52,11 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Bishop.cs" />
+     <Compile Include="Assets\Scripts\Check.cs" />
+     <Compile Include="Assets\Scripts\Checkmate.cs" />
      <Compile Include="Assets\Scripts\ChessPiece.cs" />
      <Compile Include="Assets\Scripts\ChessPieceManager.cs" />
+     <Compile Include="Assets\Scripts\ColorSelector.cs" />
      <Compile Include="Assets\Scripts\CreateGame.cs" />
      <Compile Include="Assets\Scripts\King.cs" />
      <Compile Include="Assets\Scripts\Knight.cs" />

@@ -10,7 +10,6 @@ public class Bishop : ChessPiece {
 		string ID = GetComponent<NetworkIdentity> ().netId.ToString();
 		this.transform.name = "Bishop " + ID;
 		base.Start ();
-		Movement ();
 	}
 
 	// Update is called once per frame
@@ -23,16 +22,16 @@ public class Bishop : ChessPiece {
 		Vector2 spotCheck = new Vector2 (currentTile.x, currentTile.y);
 		//TopRight
 		for (int x=(int)currentTile.x+1; x< CreateGame.BoardSize.x + (movement.x - currentTile.x); x++){
-			Debug.Log ("X is " + x);
+			//Debug.Log ("X is " + x);
 			for (int y = (int)currentTile.y + 1; y < CreateGame.BoardSize.y + (movement.y - currentTile.y); y++) {
-				Debug.Log ("Y is " + y);
+				//Debug.Log ("Y is " + y);
 				if (new Vector2(x,y) == spotCheck  + new Vector2(1,1)) {
 					
 					Vector2 tileLocation = new Vector2 (x, y);
 					bool tileExist = TileManager.TileExistAt (tileLocation);
 					if (tileExist) {
 						canMove.Add (tileLocation);
-						Debug.Log ("ADDED : " + tileLocation);
+						//Debug.Log ("ADDED : " + tileLocation);
 						spotCheck = spotCheck + new Vector2(1,1);
 					}
 				}
@@ -48,7 +47,7 @@ public class Bishop : ChessPiece {
 					bool tileExist = TileManager.TileExistAt (tileLocation);
 					if (tileExist) {
 						canMove.Add (tileLocation);
-						Debug.Log ("ADDED : " + tileLocation);
+						//Debug.Log ("ADDED : " + tileLocation);
 						spotCheck = spotCheck + new Vector2(-1,-1);
 					}
 				}
@@ -64,7 +63,7 @@ public class Bishop : ChessPiece {
 					bool tileExist = TileManager.TileExistAt (tileLocation);
 					if (tileExist) {
 						canMove.Add (tileLocation);
-						Debug.Log ("ADDED : " + tileLocation);
+						//Debug.Log ("ADDED : " + tileLocation);
 						spotCheck = spotCheck + new Vector2(-1,1);
 					}
 				}
@@ -80,17 +79,17 @@ public class Bishop : ChessPiece {
 					bool tileExist = TileManager.TileExistAt (tileLocation);
 					if (tileExist) {
 						canMove.Add (tileLocation);
-						Debug.Log ("ADDED : " + tileLocation);
+						//Debug.Log ("ADDED : " + tileLocation);
 						spotCheck = spotCheck + new Vector2(1,-1);
 					}
 				}
 			}
 		}
 
-//		foreach (Vector2 coord in canMove) {
-//			GameObject tile = TileManager.GetTileAt (coord);
-//			Renderer rend = tile.GetComponent<Renderer> ();
-//			rend.material.SetColor ("_Color", Color.green);
-//		}
+		foreach (Vector2 coord in canMove) {
+			GameObject tile = TileManager.GetTileAt (coord);
+			Renderer rend = tile.GetComponent<Renderer> ();
+			rend.material.SetColor ("_Color", UnityEngine.Color.green);
+		}
 	}
 }

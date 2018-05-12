@@ -10,7 +10,6 @@ public class Queen : ChessPiece {
 		string ID = GetComponent<NetworkIdentity> ().netId.ToString();
 		this.transform.name = "Queen " + ID;
 		base.Start ();
-		Movement ();
 	}
 	
 	// Update is called once per frame
@@ -28,7 +27,7 @@ public class Queen : ChessPiece {
 				bool tileExist = TileManager.TileExistAt (tileLocation);
 				hitPiece = TileManager.GetTileAt (tileLocation).GetComponent<Tile> ().occupied;
 				if (hitPiece) {
-					Debug.Log ("Piece in way");
+					//Debug.Log ("Piece in way");
 				}
 				if (tileExist) {
 					canMove.Add (tileLocation);
@@ -126,10 +125,10 @@ public class Queen : ChessPiece {
 			}
 		}
 
-//		foreach (Vector2 coord in canMove) {
-//			GameObject tile = TileManager.GetTileAt (coord);
-//			Renderer rend = tile.GetComponent<Renderer> ();
-//			rend.material.SetColor ("_Color", Color.blue);
-//		}
+		foreach (Vector2 coord in canMove) {
+			GameObject tile = TileManager.GetTileAt (coord);
+			Renderer rend = tile.GetComponent<Renderer> ();
+			rend.material.SetColor ("_Color", UnityEngine.Color.blue);
+		}
 	}
 }

@@ -7,8 +7,11 @@ public class PlayerObject : NetworkBehaviour {
     
     public GameObject Queen, Bishop, King, Rook;
 
-
-
+	public int Color; // white is 1, black is -1
+	[SerializeField]
+	private LayerMask piece;
+	private bool selectedPiece;
+	private GameObject selectedGO;
     // Use this for initialization
     void Start () {
         
@@ -16,8 +19,7 @@ public class PlayerObject : NetworkBehaviour {
             // this object is owned by another player
             return;
         }
-        
-
+		selectedPiece = false;
         /* Player object is invisible and not part of the world
          give me something physical to move around */
         Debug.Log("PlayerObject::Start -- Spawning my own personal player unit");
@@ -37,7 +39,12 @@ public class PlayerObject : NetworkBehaviour {
 	// Update is called once per frame
 	void Update () {
         //Update runs on everyone's computer whether or not they own this particular player object
+		if(!isLocalPlayer) {
+			// this object is owned by another player
+			return;
+		}
 
+		Selector ();
     }
 
     /* Commands */
@@ -68,4 +75,27 @@ public class PlayerObject : NetworkBehaviour {
             tile.GetComponent<Tile>().occupied = true;
         }
     }
+
+	void Selector(){
+		if (Input.GetMouseButtonDown (0)) {
+			//Left Click
+			Ray ray = GetComponentInChildren<Camera>().ScreenPointToRay(Input.mousePosition);
+			Debug.DrawRay (ray.origin, ray.direction * 30, UnityEngine.Color.red, 5);
+			RaycastHit hit;
+			if(Physics.Raycast (ray,out hit, 50f, piece.value)){
+				Debug.Log ("Hit Piece" + hit.transform.name);
+				selectedGO = hit.transform.gameObject;
+				selectedGO.GetComponent<ChessPiece> ().selected = true;
+				selectedPiece = true;
+			}
+		} 
+		else if(Input.GetMouseButtonDown(1) && selectedPiece == true){
+			//Right Click
+			selectedGO.GetComponent<ChessPiece>().selected = false;
+			selectedGO = null;
+			selectedPiece = false;
+		}
+
+	}
+
 }

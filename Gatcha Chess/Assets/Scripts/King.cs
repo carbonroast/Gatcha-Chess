@@ -12,7 +12,6 @@ public class King : ChessPiece
         string ID = GetComponent<NetworkIdentity>().netId.ToString();
         this.transform.name = "King " + ID;
         base.Start();
-        Movement();
     }
 
     // Update is called once per frame
@@ -39,23 +38,23 @@ public class King : ChessPiece
                         hitPiece = TileManager.GetTileAt(tileLocation).GetComponent<Tile>().occupied;
                         if (hitPiece)
                         {
-                            Debug.Log("Piece in way");
+                           // Debug.Log("Piece in way");
                         }
                         if (tileExist)
                         {
                             canMove.Add(tileLocation);
-                            Debug.Log("ADDED : " + tileLocation);
+                            //Debug.Log("ADDED : " + tileLocation);
                         }
                     }
                 }
 
             }
-//            foreach (Vector2 coord in canMove)
-//            {
-//                GameObject tile = TileManager.GetTileAt(coord);
-//                Renderer rend = tile.GetComponent<Renderer>();
-//                rend.material.SetColor("_Color", Color.cyan);
-//            }
+            foreach (Vector2 coord in canMove)
+            {
+                GameObject tile = TileManager.GetTileAt(coord);
+                Renderer rend = tile.GetComponent<Renderer>();
+                rend.material.SetColor("_Color", UnityEngine.Color.cyan);
+            }
         }
     }
 }
